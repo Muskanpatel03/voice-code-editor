@@ -1,0 +1,123 @@
+/* Main Layout */
+.app {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Bar */
+.header {
+  background: rgba(61, 61, 61, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+
+
+/* Buttons */
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.voice-btn, .run-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Voice */
+.voice-btn {
+  background: #1b1b1b;
+  color: #ccc;
+}
+
+.voice-btn:hover {
+  background: #161616;
+  color: white;
+}
+
+/* Run */
+.run-btn {
+  background: linear-gradient(135deg, #007acc, #005f9e);
+  color: white;
+}
+
+.run-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.5);
+}
+
+/* Editor + Output Layout */
+.main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Editor Section */
+.editor-container {
+  flex: 2;
+}
+
+/* Output Console */
+.output-box {
+  flex: 1;
+  background: #1e1e1e;
+  border-left: 1px solid #333;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.output-box h3 {
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+.output-box pre {
+  color: #9cdcfe;
+  font-family: monospace;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .output-box {
+    flex: 0 0 150px;
+    border-left: none;
+    border-top: 1px solid #333;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
