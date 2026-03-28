@@ -26,12 +26,11 @@
   letter-spacing: 0.5px;
 }
 
-
-
 /* Buttons */
 .controls {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 button {
@@ -42,7 +41,9 @@ button {
   font-size: 13px;
 }
 
-.voice-btn, .run-btn {
+/* Voice + Run */
+.voice-btn,
+.run-btn {
   padding: 8px 16px;
   border-radius: 6px;
   font-size: 13px;
@@ -104,7 +105,70 @@ button {
   font-family: monospace;
 }
 
-/* MOBILE RESPONSIVE */
+/* Dropdown Menu */
+.menu {
+  position: relative;
+}
+
+.menu-btn {
+  background: #2d2d2d;
+  color: white;
+  font-size: 18px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  background: #2d2d2d;
+  border: 1px solid #444;
+  border-radius: 6px;
+  display: none;
+  flex-direction: column;
+  min-width: 120px;
+  z-index: 10;
+}
+
+.dropdown button {
+  background: none;
+  color: white;
+  padding: 8px;
+  text-align: left;
+}
+
+.dropdown button:hover {
+  background: #444;
+}
+
+.menu:hover .dropdown {
+  display: flex;
+}
+
+/* Clear Button (inside dropdown) */
+.clear-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.clear-btn:hover {
+  background: #ff4d5a;
+}
+
+/* Download Button */
+.download-btn {
+  background: #28a745;
+  color: white;
+}
+
+.download-btn:hover {
+  background: #34c759;
+}
+
+/* 📱 MOBILE RESPONSIVE */
 @media (max-width: 768px) {
   .main {
     flex-direction: column;
@@ -117,7 +181,25 @@ button {
   }
 
   .controls {
-    flex-direction: column;
-    gap: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .voice-btn,
+  .run-btn {
+    flex: 1;
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .menu-btn {
+    flex: 0;
+    min-width: 36px;
+    font-size: 16px;
+    padding: 6px;
   }
 }
