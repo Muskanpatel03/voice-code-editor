@@ -190,52 +190,53 @@ let timer = setInterval(()=>{
     }
 
     // 🔥 SIMPLE WEBSITE
-    else if (speech.includes("create website") || speech.includes("demo website")) {
-  setCode(`
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Demo Website</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      color: white;
-      text-align: center;
-    }
-    .card {
-      margin-top: 100px;
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 12px;
-      display: inline-block;
-    }
-    button {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 6px;
-      background: #ff9800;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #e68900;
-    }
-  </style>
-</head>
-<body>
+    else if (
+      speech.includes("create website") ||
+      speech.includes("demo website")
+    ) {
+      setCode(`
+document.body.style.margin = "0";
+document.body.style.fontFamily = "Arial";
 
-  <div class="card">
-    <h1>Welcome 🎉</h1>
-    <p>This is my voice controlled project</p>
-    <button onclick="alert('Hello Muskan!')">Click Me</button>
-  </div>
+// Background
+document.body.style.background = "linear-gradient(135deg, #6a11cb, #2575fc)";
+document.body.style.color = "white";
+document.body.style.textAlign = "center";
 
-</body>
-</html>
+// Create container
+const container = document.createElement("div");
+container.style.marginTop = "100px";
+
+// Title
+const title = document.createElement("h1");
+title.innerText = "Welcome 🎉";
+
+// Text
+const text = document.createElement("p");
+text.innerText = "This website is created using JavaScript";
+
+// Button
+const btn = document.createElement("button");
+btn.innerText = "Click Me";
+btn.style.padding = "10px 15px";
+btn.style.border = "none";
+btn.style.borderRadius = "6px";
+btn.style.background = "#ff9800";
+btn.style.color = "white";
+btn.style.cursor = "pointer";
+
+btn.onclick = () => {
+  alert("Hello Team!");
+};
+
+// Append all
+container.appendChild(title);
+container.appendChild(text);
+container.appendChild(btn);
+
+document.body.appendChild(container);
 `);
-}
+    }
 
     // 🔹 ALERT
     else if (speech.includes("alert")) {
