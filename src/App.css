@@ -1,4 +1,7 @@
 /* Main Layout */
+body {
+  overflow-x: hidden;
+}
 .app {
   background: #1e1e1e;
   color: #d4d4d4;
@@ -17,6 +20,9 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #333;
+  position: relative;
+  z-index: 10000;
+
 }
 
 .title {
@@ -84,6 +90,9 @@ button {
 /* Editor Section */
 .editor-container {
   flex: 2;
+  position: relative;
+  z-index: 1;
+
 }
 
 /* Output Console */
@@ -130,10 +139,9 @@ button {
   display: none;
   flex-direction: column;
   min-width: 130px;
-  z-index: 999;
 
-  /* ✅ IMPORTANT FIX */
-  max-width: 90vw;
+  z-index: 9999; /* 🔥 increase */
+
 }
 
 .dropdown button {
@@ -182,14 +190,13 @@ button {
     border-left: none;
     border-top: 1px solid #333;
   }
+  @media (max-width: 768px) {
   .dropdown {
-    right: 0;
-    left: auto;
-    top: 45px;
-
-    /* ✅ Prevent hiding */
-    transform: translateX(-20%);
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
   }
+}
   .controls {
     display: flex;
     flex-direction: row;
