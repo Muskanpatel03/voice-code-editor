@@ -123,14 +123,17 @@ button {
 .dropdown {
   position: absolute;
   right: 0;
-  top: 35px;
+  top: 40px;
   background: #2d2d2d;
   border: 1px solid #444;
-  border-radius: 6px;
+  border-radius: 8px;
   display: none;
   flex-direction: column;
-  min-width: 120px;
-  z-index: 10;
+  min-width: 130px;
+  z-index: 999;
+
+  /* ✅ IMPORTANT FIX */
+  max-width: 90vw;
 }
 
 .dropdown button {
@@ -179,7 +182,14 @@ button {
     border-left: none;
     border-top: 1px solid #333;
   }
+  .dropdown {
+    right: 0;
+    left: auto;
+    top: 45px;
 
+    /* ✅ Prevent hiding */
+    transform: translateX(-20%);
+  }
   .controls {
     display: flex;
     flex-direction: row;
