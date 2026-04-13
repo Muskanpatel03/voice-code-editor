@@ -220,3 +220,165 @@ button {
     padding: 6px;
   }
 }
+/* ── AI PROMPT BAR ── */
+.ai-prompt-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  background: #12122a;
+  border-bottom: 1px solid #2a2a4a;
+}
+.ai-prompt-label {
+  color: #cba6f7;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.ai-prompt-input {
+  flex: 1;
+  background: #1e1e3a;
+  color: #cdd6f4;
+  border: 1px solid #3a3a6a;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 13px;
+  outline: none;
+}
+.ai-prompt-input:focus {
+  border-color: #cba6f7;
+}
+.ai-prompt-input::placeholder { color: #555; }
+.ai-prompt-btn {
+  background: #cba6f7;
+  color: #1e1e2e;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
+}
+.ai-prompt-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── AI STATUS BAR ── */
+.ai-status-bar {
+  background: #1a1a3a;
+  color: #cba6f7;
+  font-size: 12px;
+  padding: 4px 14px;
+  border-bottom: 1px solid #2a2a4a;
+  animation: fadein 0.3s ease;
+}
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── VOICE BTN LISTENING STATE ── */
+.voice-btn.listening {
+  background: #f38ba8 !important;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* ── FILE MANAGER ── */
+.file-manager {
+  width: 175px;
+  min-width: 175px;
+  background: #0d0d1a;
+  border-right: 1px solid #2a2a4a;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.file-manager-title {
+  color: #666;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  padding: 0 4px;
+}
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.file-item:hover { background: #1e1e3a; }
+.file-item.active { background: #2a2a5a; border-left: 2px solid #cba6f7; }
+.file-name {
+  font-size: 12px;
+  color: #ccc;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.file-item.active .file-name { color: #cba6f7; }
+.file-delete-btn {
+  background: none;
+  border: none;
+  color: #f38ba8;
+  cursor: pointer;
+  font-size: 11px;
+  opacity: 0;
+  padding: 0 2px;
+}
+.file-item:hover .file-delete-btn { opacity: 1; }
+.file-rename-input {
+  flex: 1;
+  background: #2a2a4a;
+  border: 1px solid #cba6f7;
+  color: white;
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-size: 12px;
+  outline: none;
+}
+.file-input-row { display: flex; gap: 4px; margin-top: 4px; }
+.file-input {
+  flex: 1;
+  background: #1e1e3a;
+  border: 1px solid #3a3a6a;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 12px;
+  outline: none;
+}
+.file-add-confirm {
+  background: #a6e3a1;
+  color: #1e1e2e;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.file-new-btn {
+  margin-top: 8px;
+  background: transparent;
+  color: #666;
+  border: 1px dashed #333;
+  border-radius: 5px;
+  padding: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.15s;
+}
+.file-new-btn:hover { background: #1e1e3a; color: #cba6f7; border-color: #cba6f7; }
+.file-tab {
+  background: #0d0d1a;
+  color: #666;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-bottom: 1px solid #1a1a2e;
+}
